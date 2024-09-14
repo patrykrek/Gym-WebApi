@@ -1,0 +1,6 @@
+@Silownia_WebApi_HostAddress = http://localhost:5190
+
+GET {{Silownia_WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
