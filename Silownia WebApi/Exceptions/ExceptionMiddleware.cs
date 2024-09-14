@@ -47,6 +47,11 @@ namespace Silownia_WebApi.Exceptions
                 context.Response.StatusCode = (int)HttpStatusCode.NotFound;
                 await context.Response.WriteAsync(ex.Message);
             }
+            catch(UserNotFound ex)
+            {
+                context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                await context.Response.WriteAsync(ex.Message);
+            }
         }
     }
 }

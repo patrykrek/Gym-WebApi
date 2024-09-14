@@ -124,7 +124,7 @@ namespace Silownia_WebApi.Services
 
             if (findMembership == null)
             {
-                throw new Exception($"Membership with ID '{id}' doesn't exist");
+                throw new MembershipNotFoundException();
             }
 
             memberships.Remove(findMembership);
@@ -143,7 +143,7 @@ namespace Silownia_WebApi.Services
 
             if (findMembership == null)
             {
-                throw new Exception($"Membership with ID '{id}' doesn't exist");
+                throw new MembershipNotFoundException();
             }
 
             findMembership.Name = updateMembership.Name;

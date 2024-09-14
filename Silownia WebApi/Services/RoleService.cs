@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Silownia_WebApi.Exceptions;
 using Silownia_WebApi.Models;
 
 namespace Silownia_WebApi.Services
@@ -27,7 +28,7 @@ namespace Silownia_WebApi.Services
 
             if (finduser == null)
             {
-                throw new Exception("User with that email doesn't exist");
+                throw new UserNotFound();
             }
 
             var getuserroles = await _userManager.GetRolesAsync(finduser);
@@ -58,7 +59,7 @@ namespace Silownia_WebApi.Services
 
             if (finduser == null)
             {
-                throw new Exception($"User with that email doesn't exist");
+                throw new UserNotFound();
             }
 
             var roleexist = await RoleExists(roles);
